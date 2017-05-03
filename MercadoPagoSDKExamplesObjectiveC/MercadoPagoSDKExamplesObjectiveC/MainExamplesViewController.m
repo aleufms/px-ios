@@ -96,7 +96,7 @@
     self.mpCheckout = [[MercadoPagoCheckout alloc] initWithCheckoutPreference:self.pref paymentData:self.paymentData discount:dc navigationController:self.navigationController paymentResult:self.paymentResult ];
     
     // Setear PaymentResultScreenPreference
-    [self setPaymentResultScreenPreference];
+    //[self setPaymentResultScreenPreference];
     
     //Setear ReviewScreenPrefernce
     [self setReviewScreenPreference];

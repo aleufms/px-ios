@@ -245,9 +245,9 @@ open class PaymentResultScreenPreference: NSObject {
     open func getApprovedSecondaryButtonCallback() -> ((PaymentResult) -> Void)? {
         return approvedSecondaryExitButtonCallback
     }
-
-    open func getHeaderApprovedIcon() -> UIImage? {
-        return MercadoPago.getImage(approvedIconName, bundle: approvedIconBundle)
+    
+    open func getHeaderApprovedIcon() -> UIImage {
+        return MercadoPago.getImage(approvedIconName, bundle: approvedIconBundle) ??  MercadoPago.getImage("MPSDK_payment_result_approved", bundle: MercadoPago.getBundle()!)!
     }
 
     //Pending
@@ -259,9 +259,9 @@ open class PaymentResultScreenPreference: NSObject {
     open func getPendingSubtitle() -> String {
         return pendingSubtitle
     }
-
-    open func getHeaderPendingIcon() -> UIImage? {
-        return MercadoPago.getImage(pendingIconName, bundle: pendingIconBundle)
+    
+    open func getHeaderPendingIcon() -> UIImage {
+        return MercadoPago.getImage(pendingIconName, bundle: pendingIconBundle) ??  MercadoPago.getImage("MPSDK_payment_result_pending", bundle: MercadoPago.getBundle()!)!
     }
 
     open func getPendingContetTitle() -> String {
@@ -297,9 +297,9 @@ open class PaymentResultScreenPreference: NSObject {
     open func getRejectedSubtitle() -> String {
         return rejectedSubtitle
     }
-
-    open func getHeaderRejectedIcon() -> UIImage? {
-        return MercadoPago.getImage(rejectedIconName, bundle: rejectedIconBundle)
+    
+    open func getHeaderRejectedIcon() -> UIImage {
+        return MercadoPago.getImage(rejectedIconName, bundle: rejectedIconBundle) ??  MercadoPago.getImage("MPSDK_payment_result_error", bundle: MercadoPago.getBundle()!)!
     }
 
     open func getRejectedContetTitle() -> String {

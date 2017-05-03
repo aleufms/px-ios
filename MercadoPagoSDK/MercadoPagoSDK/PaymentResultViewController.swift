@@ -134,9 +134,13 @@ open class PaymentResultViewController: MercadoPagoUIViewController, UITableView
     }
 
     private func getHeaderCell(indexPath: IndexPath) -> UITableViewCell {
-        let headerCell = self.tableView.dequeueReusableCell(withIdentifier: "headerNib") as! HeaderCongratsTableViewCell
-        headerCell.fillCell(paymentResult: self.viewModel.paymentResult!, paymentMethod: self.viewModel.paymentResult.paymentData?.paymentMethod, color: self.viewModel.getColor(), paymentResultScreenPreference: self.viewModel.paymentResultScreenPreference)
-        return headerCell
+        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "HeaderCell")
+        cell.contentView.viewWithTag(3)?.removeFromSuperview()
+        let contentCell = PaymentResultHeaderView(paymentResult: self.viewModel.paymentResult!, paymentMethod: self.viewModel.paymentResult.paymentData?.paymentMethod, color: self.viewModel.getColor(), paymentResultScreenPreference: self.viewModel.paymentResultScreenPreference)
+        contentCell.tag = 3
+        cell.contentView.addSubview(contentCell)
+        cell.selectionStyle = .none
+        return cell
     }
 
     private func getFooterCell() -> UITableViewCell {
