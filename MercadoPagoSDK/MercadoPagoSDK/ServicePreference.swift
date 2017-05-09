@@ -25,9 +25,9 @@ open class ServicePreference : NSObject{
     static let MP_PROD_ENV = "/v1"
     static let API_VERSION = "1.3.X"
     
-    static let MP_ENVIROMENT = MP_PROD_ENV  + "/checkout"
+    static let MP_ENVIROMENT = MP_TEST_ENV  + "/checkout"
     
-    static let MP_OP_ENVIROMENT = "/v1"
+    static let MP_OP_ENVIROMENT = MP_TEST_ENV
     
     static let MP_ALPHA_API_BASE_URL : String =  "http://api.mp.internal.ml.com"
     static let MP_API_BASE_URL_PROD : String =  "https://api.mercadopago.com"
@@ -37,7 +37,7 @@ open class ServicePreference : NSObject{
     static let MP_CUSTOMER_URI = "/customers?preference_id="
     static let MP_PAYMENTS_URI = MP_ENVIROMENT + "/payments"
     
-    static let MP_CREATE_TOKEN_URI = MP_OP_ENVIROMENT + "/card_tokens"
+    static let MP_CREATE_TOKEN_URI = MP_PROD_ENV + "/card_tokens"
     static let MP_PAYMENT_METHODS_URI = MP_OP_ENVIROMENT + "/payment_methods"
     static let MP_INSTALLMENTS_URI = MP_OP_ENVIROMENT + "/payment_methods/installments"
     static let MP_ISSUERS_URI = MP_OP_ENVIROMENT + "/payment_methods/card_issuers"
