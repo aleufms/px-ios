@@ -42,7 +42,32 @@ open class MercadoPagoCheckout: NSObject {
 
     public func start() {
         MercadoPagoCheckout.currentCheckout = self
+        
+        testError()
+        
         executeNextStep()
+    }
+    
+    enum testErrors: Error {
+        case error1
+    }
+    
+    func testError() {
+        do {
+            try testFunction()
+        } catch {
+            print("Error")
+        }
+    }
+    
+    func testFunction() throws {
+        let test : Int! = nil
+        
+        guard let testInt = test else {
+            throw testErrors.error1
+        }
+        
+        print(testInt)
     }
 
     func executeNextStep() {
